@@ -5,7 +5,6 @@ import ReactNative, {
   View,
   Text,
   StyleSheet,
-  ScrollView,
   Dimensions,
   TextInput,
   ViewPropTypes,
@@ -71,17 +70,17 @@ export default class CreditCardInput extends Component {
     cardViewSize: {},
     labels: {
       name: "CARDHOLDER'S NAME",
-      number: "CARD NUMBER",
-      expiry: "EXPIRY",
+      number: "NÚMERO DO CARTÃO",
+      expiry: "VENCIMENTO",
       cvc: "CVC/CCV",
       postalCode: "POSTAL CODE",
     },
     placeholders: {
-      name: "Full Name",
+      name: "Nome no Cartão",
       number: "1234 5678 1234 5678",
-      expiry: "MM/YY",
+      expiry: "MM/AA",
       cvc: "CVC",
-      postalCode: "34567",
+      postalCode: "12345",
     },
     inputContainerStyle: {
       borderBottomWidth: 1,
@@ -160,7 +159,7 @@ export default class CreditCardInput extends Component {
           number={number}
           expiry={expiry}
           cvc={cvc} />
-        <ScrollView ref="Form"
+        <View ref="Form"
           horizontal
           keyboardShouldPersistTaps="always"
           scrollEnabled={allowScroll}
@@ -183,7 +182,7 @@ export default class CreditCardInput extends Component {
             <CCInput {...this._inputProps("postalCode")}
               keyboardType="numeric"
               containerStyle={[s.inputContainer, inputContainerStyle, { width: POSTAL_CODE_INPUT_WIDTH }]} /> }
-        </ScrollView>
+        </View>
       </View>
     );
   }
